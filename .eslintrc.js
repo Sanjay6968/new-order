@@ -6,7 +6,7 @@ module.exports = {
     node: true
   },
   settings: {
-    "react": {
+    react: {
       version: "detect"
     },
     "import/parsers": {
@@ -24,7 +24,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:tailwind/recommended"
+    "plugin:tailwindcss/recommended" // ✅ updated
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -38,7 +38,7 @@ module.exports = {
     "react",
     "react-hooks",
     "import",
-    "tailwindcss",
+    "tailwindcss", // ✅ updated
     "@typescript-eslint"
   ],
   rules: {
