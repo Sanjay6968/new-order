@@ -37,12 +37,8 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-     "build": "next build",
-    "next-on-pages": "next-on-pages build",
-    "deploy": "wrangler deploy"
-
+    "build": "next-on-pages build",
+    "deploy": "wrangler pages deploy .vercel/output/static --project-name=new-order",
     "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
@@ -97,11 +93,13 @@
     "postcss": "^8.4.38",
     "prettier": "3.2.5",
     "tailwindcss": "^3.4.3",
-    "typescript": "5.4.5"
+    "typescript": "5.4.5",
+    "next-on-pages": "^1.4.3"
   },
   "resolutions": {
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
-  }
+  },
+  "pages_build_output_dir": ".vercel/output/static"
 }
