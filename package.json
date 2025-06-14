@@ -39,7 +39,10 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "export": "npx wrangler pages deploy out --project-name=new-order",
+     "build": "next build",
+    "next-on-pages": "next-on-pages build",
+    "deploy": "wrangler deploy"
+
     "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
