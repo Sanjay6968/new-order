@@ -1,33 +1,19 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Adds trailing slash to URLs (e.g. /about/)
+  output: 'export', // 🔥 Enables static export
   trailingSlash: true,
-
-  // Disables React strict mode (you can turn it back on if needed)
   reactStrictMode: false,
 
-  // Ignore ESLint build errors during production
   eslint: {
     ignoreDuringBuilds: true,
   },
-
-  // Ignore TypeScript build errors during production
   typescript: {
     ignoreBuildErrors: true,
   },
-
-  // Required to prevent EMFILE font error on Cloudflare
-  experimental: {
-    optimizeFonts: false,
-  },
-
-  // Optional: Enable SWC-based minification
   swcMinify: true,
 
-  // Custom Webpack configuration
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
