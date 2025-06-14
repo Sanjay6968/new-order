@@ -2,19 +2,9 @@ const path = require('path')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  trailingSlash: true,
-  reactStrictMode: false,
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  reactStrictMode: true,
   swcMinify: true,
-
-  // Use static export
-  output: 'export',
+  trailingSlash: false,
 
   webpack: (config, { isServer }) => {
     config.resolve.alias = {
@@ -23,7 +13,7 @@ const nextConfig = {
     }
 
     if (!isServer && config.optimization?.splitChunks) {
-      config.optimization.splitChunks.maxSize = 20000000 // 20MB chunk max size
+      config.optimization.splitChunks.maxSize = 24000000 // Under 25 MB
     }
 
     return config
@@ -31,3 +21,4 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
