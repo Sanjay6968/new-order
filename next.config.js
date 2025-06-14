@@ -19,6 +19,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
+  // Required to prevent EMFILE font error on Cloudflare
+  experimental: {
+    optimizeFonts: false,
+  },
+
   // Optional: Enable SWC-based minification
   swcMinify: true,
 
